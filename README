@@ -1,0 +1,16 @@
+# Nobel Prize Search API
+
+Ingest Nobel Prize laureate data into MongoDB and provide a Flask API with fuzzy and text-based searches, all inside of Docker.
+
+## Prerequisites
+
+- Docker & Docker Compose  
+- Python 3.7+ to run `ingest.py` locally
+
+## Run
+- If you plan to run this via bash, then please run:
+```bash
+run.sh
+```
+
+- This will run the bash script, testing different types of searches, and also test and provide na upsert.

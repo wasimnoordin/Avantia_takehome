@@ -1,18 +1,15 @@
-# Use a lightweight official Python image
-FROM python:3.11-slim
+# Dockerfile
 
-# Set working directory inside the container
+FROM python:3.11-slim
 WORKDIR /app
 
-# Copy and install dependencies
+# install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY app.py .
+COPY ingest.py app.py ./
 
-# Expose the port your app runs on
+
 EXPOSE 5000
 
-# Run the app
-CMD ["python", "app.py"]
+CMD ["sh", "-c", "python ingest.py && python app.py"]

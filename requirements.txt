@@ -1,1 +1,5 @@
 flask
+pymongo
+rapidfuzz
+requests
+pydantic
